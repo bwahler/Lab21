@@ -5,3 +5,16 @@
 <h2>Welcome to GC Coffee Shop!</h2>
 
 <a href="/Home/Register">Register</a>
+
+@{ 
+    foreach(var item in ViewBag.index)
+    {
+        <ol>
+            <li>@item.Name</li>
+            <li>@item.Description</li>
+            <li>@item.Quantity</li>
+            <li>@item.Price</li>
+        </ol>
+    }
+
+}

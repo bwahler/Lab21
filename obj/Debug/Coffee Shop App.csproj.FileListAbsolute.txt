@@ -89,3 +89,7 @@ C:\Users\bmwah\source\repos\Coffee Shop\Coffee Shop\obj\Debug\Coffee Shop App.cs
 C:\Users\bmwah\source\repos\Coffee Shop\Coffee Shop\obj\Debug\Coffee Shop App.csproj.CopyComplete
 C:\Users\bmwah\source\repos\Coffee Shop\Coffee Shop\obj\Debug\Coffee Shop.dll
 C:\Users\bmwah\source\repos\Coffee Shop\Coffee Shop\obj\Debug\Coffee Shop.pdb
+C:\Users\bmwah\source\repos\Coffee Shop\Coffee Shop\bin\EntityFramework.dll
+C:\Users\bmwah\source\repos\Coffee Shop\Coffee Shop\bin\EntityFramework.SqlServer.dll
+C:\Users\bmwah\source\repos\Coffee Shop\Coffee Shop\bin\EntityFramework.xml
+C:\Users\bmwah\source\repos\Coffee Shop\Coffee Shop\bin\EntityFramework.SqlServer.xml

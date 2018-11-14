@@ -11,6 +11,8 @@ namespace Coffee_Shop.Controllers
     {
         public ActionResult Index()
         {
+            CoffeeShopDBEntities index = new CoffeeShopDBEntities();
+            ViewBag.index = index.Items.ToList<Item>();
             return View();
         }
 
@@ -30,10 +32,13 @@ namespace Coffee_Shop.Controllers
         {
             return View();
         }
-        public ActionResult AddUser(UserInfo newUser)
+        public ActionResult AddUser(User newUser)
         {
             if (ModelState.IsValid)
             {
+                CoffeeShopDBEntities database = new CoffeeShopDBEntities();
+                database.Users.Add(newUser);
+                database.SaveChanges();
                 ViewBag.WelcomeMessage = $"Welcome {newUser.FirstName}!";
                 return View("Confirmation");
             }

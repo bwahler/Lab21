@@ -27,6 +27,7 @@ namespace Coffee_Shop.Models
         [Required]
         [RegularExpression(@"^[a-zA-Z]\w{3,14}$")]
         public string Password { set; get; }
+
         public UserInfo()
         {
             FirstName = "";
