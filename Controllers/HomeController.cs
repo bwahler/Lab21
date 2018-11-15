@@ -80,7 +80,7 @@ namespace Coffee_Shop.Controllers
             CoffeeShopDBEntities database = new CoffeeShopDBEntities();
             Item ItemToChange = database.Items.Find(name);
             ViewBag.ItemToChange = ItemToChange;
-            return View();
+            return View(ItemToChange);
         }
     }
 }
