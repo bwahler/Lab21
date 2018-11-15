@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "AddItem";
+}
+
+<h2>AddItem</h2>
+
+<form name="AddItem" action="/Home/AddItem" method="post">
+    <input id="Name" placeholder="Item Name" type="text" name="Name" /> <br /> <br />
+    <input id="Description" placeholder="Item Description" type="text" name="Description" /> <br /> <br />
+    <input id="Quantity" placeholder="Amount of item Available" type="text" name="Quantity" /> <br /> <br />
+    <input id="Price" placeholder="Price" type="text" name="Price" /> <br /> <br />
+    <input type="submit" value="Add" />
+</form>

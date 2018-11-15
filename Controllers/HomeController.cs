@@ -52,7 +52,7 @@ namespace Coffee_Shop.Controllers
             CoffeeShopDBEntities AddItem = new CoffeeShopDBEntities();
             AddItem.Items.Add(newItem);
             AddItem.SaveChanges();
-            return View("Index");
+            return View("AddItem");
         }
         public ActionResult SaveItem(Item UpdateItem)
         {

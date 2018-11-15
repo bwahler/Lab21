@@ -243,8 +243,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Confirmation.cshtml" />
-    <Content Include="Views\Shared\AddItem.cshtml" />
-    <Content Include="Views\Shared\ItemInfo.cshtml" />
+    <Content Include="Views\Home\AddItem.cshtml" />
+    <Content Include="Views\Home\ItemInfo.cshtml" />
     <Content Include="Views\Home\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
