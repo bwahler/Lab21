@@ -12,7 +12,7 @@ namespace Coffee_Shop.Controllers
         public ActionResult Index()
         {
             CoffeeShopDBEntities index = new CoffeeShopDBEntities();
-            ViewBag.index = index.Items.ToList<Item>();
+            ViewBag.items = index.Items.ToList();
             return View();
         }
 
@@ -36,16 +36,51 @@ namespace Coffee_Shop.Controllers
         {
             if (ModelState.IsValid)
             {
-                CoffeeShopDBEntities database = new CoffeeShopDBEntities();
-                database.Users.Add(newUser);
-                database.SaveChanges();
+                CoffeeShopDBEntities AddUser = new CoffeeShopDBEntities();
+                AddUser.Users.Add(newUser);
+                AddUser.SaveChanges();
                 ViewBag.WelcomeMessage = $"Welcome {newUser.FirstName}!";
                 return View("Confirmation");
             }
             else
             {
-                return View("@Html.ValidationSummary()");
+                return View("Error");
             }
+        }
+        public ActionResult AddItem(Item newItem)
+        {
+            CoffeeShopDBEntities AddItem = new CoffeeShopDBEntities();
+            AddItem.Items.Add(newItem);
+            AddItem.SaveChanges();
+            return View("Index");
+        }
+        public ActionResult SaveItem(Item UpdateItem)
+        {
+            CoffeeShopDBEntities save = new CoffeeShopDBEntities();
+            Item PreviousRecord = save.Items.Find(UpdateItem.Name);
+            save.Entry(save.Items.Find(UpdateItem));
+
+            PreviousRecord.Name = UpdateItem.Name;
+            PreviousRecord.Description = UpdateItem.Description;
+            PreviousRecord.Quantity = UpdateItem.Quantity;
+            PreviousRecord.Price = UpdateItem.Price;
+
+            save.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult DeleteItem(string name )
+        {
+            CoffeeShopDBEntities delete = new CoffeeShopDBEntities();
+            delete.Items.Remove(delete.Items.Find(name));
+            delete.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult ItemInfo(string name)
+        {
+            CoffeeShopDBEntities database = new CoffeeShopDBEntities();
+            Item ItemToChange = database.Items.Find(name);
+            ViewBag.ItemToChange = ItemToChange;
+            return View();
         }
     }
 }

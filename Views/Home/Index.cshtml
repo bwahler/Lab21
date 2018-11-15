@@ -4,17 +4,26 @@
 
 <h2>Welcome to GC Coffee Shop!</h2>
 
-<a href="/Home/Register">Register</a>
+<a href="/Home/Register">Register</a> <br /> <br />
+<a href="/Home/AddItem">Add</a>
 
-@{ 
-    foreach(var item in ViewBag.index)
+<table border="1" class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+
+    @foreach (var item in ViewBag.items)
     {
-        <ol>
-            <li>@item.Name</li>
-            <li>@item.Description</li>
-            <li>@item.Quantity</li>
-            <li>@item.Price</li>
-        </ol>
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.Description</td>
+        <td>@item.Quantity</td>
+        <td>@item.Price</td>
+        <td><a href="/Home/ItemInfo?Name=@item.Name">Update</a></td>
+        <td><a href="/Home/DeleteItem?Name=@item.Name" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a></td>
+    </tr>
     }
-
-}
+</table>
