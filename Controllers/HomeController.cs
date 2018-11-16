@@ -47,12 +47,16 @@ namespace Coffee_Shop.Controllers
                 return View("Error");
             }
         }
-        public ActionResult AddItem(Item newItem)
+        public ActionResult AddItem()
+        {
+            return View();
+        }
+        public ActionResult SaveNewItem(Item newItem)
         {
             CoffeeShopDBEntities AddItem = new CoffeeShopDBEntities();
             AddItem.Items.Add(newItem);
             AddItem.SaveChanges();
-            return View("AddItem");
+            return RedirectToAction("Index");
         }
         public ActionResult SaveItem(Item UpdateItem)
         {

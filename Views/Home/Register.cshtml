@@ -6,13 +6,13 @@
 <h2>Register</h2>
 
 <form name="userReg" action="/Home/AddUser" onsubmit="return validationForm()" method="post">
-    <input id="FirstName" placeholder="First Name" type="text" name="FirstName" onchange="TestFirstName" pattern="^[a-zA-Z]{2,}$" /> <br /> <br />
-    <input id="LastName" placeholder="Last Name" type="text" name="LastName" pattern="^[a-zA-Z]{2,}$" /> <br /> <br />
-    <input id="EmailAddress" placeholder="sample@email.com" type="text" name="EmailAddress" /> <br /> <br />
-    <input id="PhoneNumber" placeholder="444-444-4444" type="text" name="PhoneNumber" /> <br /> <br />
-    <input id="UserName" placeholder="Username" type="text" name="UserName" /> <br /> <br />
-    <input id="Password" placeholder="Password" type="password" name="Password" /> <br /> <br />
-    <label for="Regular">Regular</label><input id="Regular" type="radio" name="coffee_type" required="required" /> <br /> <br />
+    <input id="FirstName" placeholder="First Name" type="text" name="FirstName" onchange="TestFirstName" pattern="^[a-zA-Z]{2,}$" class="form-control"/> <br />
+    <input id="LastName" placeholder="Last Name" type="text" name="LastName" pattern="^[a-zA-Z]{2,}$" class="form-control"/> <br />
+    <input id="EmailAddress" placeholder="sample@email.com" type="text" name="EmailAddress" class="form-control"/> <br />
+    <input id="PhoneNumber" placeholder="444-444-4444" type="text" name="PhoneNumber" class="form-control"/> <br />
+    <input id="UserName" placeholder="Username" type="text" name="UserName" class="form-control"/> <br />
+    <input id="Password" placeholder="Password" type="password" name="Password" class="form-control"/> <br />
+    <label for="Regular">Regular</label><input id="Regular" type="radio" name="coffee_type" required="required" /> <br />
     <label for="Decaf">Decaf</label><input id="Decaf" type="radio" name="coffee_type" required="required" /> <br /> <br />
     <input type="submit" value="Submit" />
 </form>
