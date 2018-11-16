@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Coffee_Shop.Models;
+using System.Data.Entity;
 
 namespace Coffee_Shop.Controllers
 {
@@ -61,13 +62,7 @@ namespace Coffee_Shop.Controllers
         public ActionResult SaveItem(Item UpdateItem)
         {
             CoffeeShopDBEntities save = new CoffeeShopDBEntities();
-            Item PreviousRecord = save.Items.Find(UpdateItem.Name);
-            save.Entry(save.Items.Find(UpdateItem));
-
-            PreviousRecord.Name = UpdateItem.Name;
-            PreviousRecord.Description = UpdateItem.Description;
-            PreviousRecord.Quantity = UpdateItem.Quantity;
-            PreviousRecord.Price = UpdateItem.Price;
+            save.Entry(UpdateItem).State = EntityState.Modified;
 
             save.SaveChanges();
             return RedirectToAction("Index");
